@@ -1,49 +1,66 @@
-Summary:	GNOME financial manager
-Name:		gnofin
-Version:	0.5.6
-Release:	1
-License:	GPL
-Group:		X11/Applications
-Group(pl):	X11/Aplikacje
-Source0:	ftp://jagger.berkeley.edu/pub/darin/gnofin/%{name}-%{version}.tar.gz
-URL:		http://jagger.berkeley.edu/~dfisher/gnofin
-BuildRequires:	gnome-libs-devel
-BuildRequires:	XFree86-devel
-BuildRequires:	imlib-devel >= 1.8.1
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+# Note that this is NOT a relocatable package
+%define ver      0.8.1
+%define rel      1
+%define prefix   /usr
 
-%define		_prefix /usr/X11R6
-%define		_mandir /usr/X11R6/man
+Summary: a simple money management application for GNOME
+Name: gnofin
+Version: %ver
+Release: %rel
+Copyright: GPL
+Group: X11/Applications
+Source: ftp://gnofin.sourceforge.net/pub/gnofin/gnofin-%{ver}.tar.gz
+BuildRoot: /var/tmp/gnofin-%{PACKAGE_VERSION}-root
+Packager: Darin Fisher <darinf@users.sourceforge.net>
+URL: http://gnofin.sourceforge.net
+Docdir: %{prefix}/doc
+
+Requires: gnome-libs >= 1.0.0
 
 %description
-Gnofin is a simple checkbook application for Linux (and other UNIX
-variants). Gnofin aims to provide a convenient way to keep track of
-your checking and savings accounts (or any other monetary-type
-accounts). It is designed to be light-weight, fast, and extremely easy
-to use.
+Gnofin is a light-weight personal finance application for GNOME well-suited for
+helping you keep your checkbook and savings accounts up-to-date.
+
+%changelog
+
+* Sat Jan 29 2000 Darin Fisher <darinf@users.sourceforge.net>
+- Updated description blurb
+
+* Mon Jan 24 2000 Darin Fisher <darinf@users.sourceforge.net>
+- Updates to reflect project move to sourceforge.net
+
+* Tue Nov 23 1999 Darin Fisher <darinf@users.sourceforge.net>
+- Updates to include po files and plugins in the rpm
+
+* Mon May 17 1999 Darin Fisher <darinf@users.sourceforge.net>
+- Initial spec file copied from electric eyes
 
 %prep
-%setup -q
+%setup
 
 %build
-libtoolize --copy --force
-autoconf
-%configure
-%{__make}
+CFLAGS="$RPM_OPT_FLAGS" ./configure --prefix=%prefix
+if [ "$SMP" != "" ]; then
+  make -j $SMP
+else
+  make
+fi
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
-	AUTHORS ChangeLog NEWS README
+make prefix=$RPM_BUILD_ROOT%{prefix} install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(644,root,root,755)
-%doc *gz
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man1/*
+%defattr(-, root, root)
+
+%doc AUTHORS COPYING ChangeLog NEWS README README.*
+
+%{prefix}/bin/*
+%{prefix}/lib/gnofin/plugins/*
+%{prefix}/man/*
+%{prefix}/share/gnome/apps/Applications/gnofin.desktop
+%{prefix}/share/locale/*/*
