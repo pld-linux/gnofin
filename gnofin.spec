@@ -11,7 +11,8 @@ BuildPrereq:	XFree86-devel
 BuildPrereq:	imlib-devel >= 1.8.1
 BuildRoot:	/tmp/%{name}-%{version}-root
 
-%define _prefix /usr/X11R6
+%define		_prefix /usr/X11R6
+%define		_mandir /usr/X11R6/man
 
 %description
 Gnofin is a simple checkbook application for Linux (and other UNIX
@@ -25,15 +26,13 @@ designed to be light-weight, fast, and extremely easy to use.
 %build
 libtoolize --copy --force
 autoconf
-CFLAGS="$RPM_OPT_FLAGS" LDFLAGS="-s" \
-./configure \
-	--prefix=%{_prefix}
+%configure
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-make prefix=$RPM_BUILD_ROOT%{_prefix} install
+make install DESTDIR=$RPM_BUILD_ROOT
 
 gzip -9nf $RPM_BUILD_ROOT%{_mandir}/man1/* \
 	AUTHORS ChangeLog NEWS README
@@ -43,7 +42,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-
 %doc *gz
-%{_bindir}/*
+%attr(755,root,root) %{_bindir}/*
 %{_mandir}/man1/*
