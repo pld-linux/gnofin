@@ -6,7 +6,9 @@ Copyright:	GPL
 Group:		X11/Applications
 Source:		ftp://jagger.berkeley.edu/pub/darin/gnofin/%{name}-%{version}.tar.gz
 URL:		http://jagger.berkeley.edu/~dfisher/gnofin
-Requires: imlib >= 1.8.1
+BuildPrereq:	gnome-libs-devel
+BuildPrereq:	XFree86-devel
+BuildPrereq:	imlib-devel >= 1.8.1
 BuildRoot:	/tmp/%{name}-%{version}-root
 
 %define _prefix /usr/X11R6
