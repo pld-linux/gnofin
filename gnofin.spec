@@ -12,6 +12,7 @@ URL:		http://gnofin.sourceforge.net/
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
 BuildRequires:	XFree86-devel
+BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel >= 1.8.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -38,6 +39,7 @@ ma³ym, szybkim oraz bardzo prostym w obs³udze.
 rm missing
 libtoolize --copy --force
 gettextize --copy --force
+aclocal -I macros
 autoconf
 automake -a -c
 %configure \
@@ -66,4 +68,4 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gnofin/plugins
 %attr(755,root,root) %{_libdir}/gnofin/plugins/*
 %{_applnkdir}/Office/PIMs/*
-%{_mandir}/man1/*
+%{_mandir}/man?/*
