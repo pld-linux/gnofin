@@ -1,12 +1,15 @@
 Summary:	GNOME financial manager
-Summary:	Manad¿er finansów dla GNOME
+Summary(pl):	Manad¿er finansów dla GNOME
 Name:		gnofin
 Version:	0.8.4
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
+Group(es):	X11/Aplicaciones
 Group(pl):	X11/Aplikacje
+Group(pt_BR):	X11/Aplicações
+Group(pt):	X11/Aplicações
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/gnofin/%{name}-%{version}.tar.gz
 URL:		http://gnofin.sourceforge.net/
 BuildRequires:	XFree86-devel
@@ -31,7 +34,7 @@ to use.
 
 %description -l pl
 Gnofin jest prost± aplikacj± rachunkow± dla Linuxa oraz innych
-UNIX'ów. Pozwala na zarz±dzanie twoimi rachunkami oraz kontami
+uniksów. Pozwala na zarz±dzanie twoimi rachunkami oraz kontami
 (wszystkimi rodzajami kont walutowych). Program jest zaprojektowany z
 my¶l±, aby byæ ma³ym, szybkim oraz bardzo prostym w obs³udze.
 
@@ -39,12 +42,11 @@ my¶l±, aby byæ ma³ym, szybkim oraz bardzo prostym w obs³udze.
 %setup -q
 
 %build
-rm missing
+rm -f missing
 libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
 autoconf
-rm -f missing
 automake -a -c
 %configure \
 	--disable-static
