@@ -28,7 +28,7 @@ accounts). It is designed to be light-weight, fast, and extremely easy
 to use.
 
 %description -l pl
-Gnofin jest prost± aplikacj± rachunkow± dla Linuxa oraz innych
+Gnofin jest prost± aplikacj± rachunkow± dla Linuksa oraz innych
 uniksów. Pozwala na zarz±dzanie twoimi rachunkami oraz kontami
 (wszystkimi rodzajami kont walutowych). Program jest zaprojektowany z
 my¶l±, aby byæ ma³ym, szybkim oraz bardzo prostym w obs³udze.
