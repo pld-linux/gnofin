@@ -47,11 +47,3 @@ rm -rf $RPM_BUILD_ROOT
 %doc *gz
 %{_bindir}/*
 %{_mandir}/man1/*
-
-%changelog
-* Sat May 29 1999 Tomasz K³oczko <kloczek@rudy.mif.pg.gda.pl>
-  [0.5.6-1]
-- rewited spec to PLD coding style.
-
-* Mon May 17 1999 Darin Fisher <dfisher@jagger.me.berkeley.edu>
-- Initial spec file copied from electric eyes
