@@ -39,7 +39,7 @@ my¶l±, aby byæ ma³ym, szybkim oraz bardzo prostym w obs³udze.
 %build
 rm -f missing
 %{__libtoolize}
-gettextize --copy --force
+%{__gettextize}
 aclocal -I macros
 %{__autoconf}
 %{__automake}
