@@ -5,7 +5,7 @@ Version:	0.8.4
 Release:	2
 License:	GPL
 Group:		X11/Applications
-Source0:	ftp://download.sourceforge.net/pub/sourceforge/gnofin/%{name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gnofin/%{name}-%{version}.tar.gz
 URL:		http://gnofin.sourceforge.net/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
@@ -16,7 +16,6 @@ BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel >= 1.8.1
 BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 Gnofin is a simple checkbook application for Linux (and other UNIX
