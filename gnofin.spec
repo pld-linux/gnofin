@@ -9,7 +9,7 @@ URL:		http://jagger.berkeley.edu/~dfisher/gnofin
 BuildRequires:	gnome-libs-devel
 BuildRequires:	XFree86-devel
 BuildRequires:	imlib-devel >= 1.8.1
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix /usr/X11R6
 %define		_mandir /usr/X11R6/man
