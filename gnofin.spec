@@ -40,7 +40,7 @@ my¶l±, aby byæ ma³ym, szybkim oraz bardzo prostym w obs³udze.
 rm -f missing
 %{__libtoolize}
 %{__gettextize}
-aclocal -I macros
+%{__aclocal} -I macros
 %{__autoconf}
 %{__automake}
 %configure \
