@@ -1,7 +1,7 @@
 Summary:	GNOME financial manager
 Name:		gnofin
 Version:	0.8.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Applications
 Group(de):	X11/Applikationen
