@@ -1,5 +1,5 @@
 Summary:	GNOME financial manager
-Summary(pl):	Manad¿er finansów dla GNOME
+Summary(pl):	Zarz±dca finansów dla GNOME
 Name:		gnofin
 Version:	0.8.4
 Release:	2
