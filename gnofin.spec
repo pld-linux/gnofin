@@ -2,9 +2,10 @@ Summary:	GNOME financial manager
 Name:		gnofin
 Version:	0.5.6
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		X11/Applications
-Source:		ftp://jagger.berkeley.edu/pub/darin/gnofin/%{name}-%{version}.tar.gz
+Group(pl):	X11/Aplikacje
+Source0:	ftp://jagger.berkeley.edu/pub/darin/gnofin/%{name}-%{version}.tar.gz
 URL:		http://jagger.berkeley.edu/~dfisher/gnofin
 BuildRequires:	gnome-libs-devel
 BuildRequires:	XFree86-devel
@@ -16,9 +17,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Gnofin is a simple checkbook application for Linux (and other UNIX
-variants). Gnofin aims to provide a convenient way to keep track of your
-checking and savings accounts (or any other monetary-type accounts). It is
-designed to be light-weight, fast, and extremely easy to use.
+variants). Gnofin aims to provide a convenient way to keep track of
+your checking and savings accounts (or any other monetary-type
+accounts). It is designed to be light-weight, fast, and extremely easy
+to use.
 
 %prep
 %setup -q
