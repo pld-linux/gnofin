@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/gnofin/%{name}-%{version}.tar.gz
+# Source0-md5:	eb552f99fcf605b699519671ca4102f1
 URL:		http://gnofin.sourceforge.net/
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
