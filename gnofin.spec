@@ -9,11 +9,14 @@ Group(de):	X11/Applikationen
 Group(pl):	X11/Aplikacje
 Source0:	ftp://download.sourceforge.net/pub/sourceforge/gnofin/%{name}-%{version}.tar.gz
 URL:		http://gnofin.sourceforge.net/
+BuildRequires:	XFree86-devel
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	gettext-devel
 BuildRequires:	gnome-libs-devel
-BuildRequires:	XFree86-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel >= 1.8.1
+BuildRequires:	libtool
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_prefix		/usr/X11R6
@@ -27,10 +30,10 @@ accounts). It is designed to be light-weight, fast, and extremely easy
 to use.
 
 %description -l pl
-Gnofin jest prost± aplikacj± rachunkow± dla Linuxa oraz innych UNIX'ów.
-Pozwala na zarz±dzanie twoimi rachunkami oraz kontami (wszystkimi
-rodzajami kont walutowych). Program jest zaprojektowany z my¶l±, aby byæ 
-ma³ym, szybkim oraz bardzo prostym w obs³udze.
+Gnofin jest prost± aplikacj± rachunkow± dla Linuxa oraz innych
+UNIX'ów. Pozwala na zarz±dzanie twoimi rachunkami oraz kontami
+(wszystkimi rodzajami kont walutowych). Program jest zaprojektowany z
+my¶l±, aby byæ ma³ym, szybkim oraz bardzo prostym w obs³udze.
 
 %prep
 %setup -q
@@ -41,6 +44,7 @@ libtoolize --copy --force
 gettextize --copy --force
 aclocal -I macros
 autoconf
+rm -f missing
 automake -a -c
 %configure \
 	--disable-static
