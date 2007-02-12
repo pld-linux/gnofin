@@ -1,5 +1,5 @@
 Summary:	GNOME financial manager
-Summary(pl):	Zarz±dca finansów dla GNOME
+Summary(pl.UTF-8):   ZarzÄ…dca finansÃ³w dla GNOME
 Name:		gnofin
 Version:	0.8.4
 Release:	2
@@ -25,11 +25,11 @@ your checking and savings accounts (or any other monetary-type
 accounts). It is designed to be light-weight, fast, and extremely easy
 to use.
 
-%description -l pl
-Gnofin jest prost± aplikacj± rachunkow± dla Linuksa oraz innych
-uniksów. Pozwala na zarz±dzanie twoimi rachunkami oraz kontami
+%description -l pl.UTF-8
+Gnofin jest prostÄ… aplikacjÄ… rachunkowÄ… dla Linuksa oraz innych
+uniksÃ³w. Pozwala na zarzÄ…dzanie twoimi rachunkami oraz kontami
 (wszystkimi rodzajami kont walutowych). Program jest zaprojektowany z
-my¶l±, aby byæ ma³ym, szybkim oraz bardzo prostym w obs³udze.
+myÅ›lÄ…, aby byÄ‡ maÅ‚ym, szybkim oraz bardzo prostym w obsÅ‚udze.
 
 %prep
 %setup -q
