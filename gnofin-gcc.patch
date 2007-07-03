@@ -1,0 +1,10 @@
+--- gnofin-0.8.4.orig/src/ui.c	2007-07-03 11:24:01.491841052 +0200
++++ gnofin-0.8.4/src/ui.c	2007-07-03 11:29:19.764805088 +0200
+@@ -1133,6 +1133,7 @@
+       if_account_delete (account);
+       break;
+     case DIALOG_NO:
++      /* do nothing */;
+     }
+   }
+ }
