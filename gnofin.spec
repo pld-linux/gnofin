@@ -8,6 +8,7 @@ Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/gnofin/%{name}-%{version}.tar.gz
 # Source0-md5:	eb552f99fcf605b699519671ca4102f1
 URL:		http://gnofin.sourceforge.net/
+Patch0:		%{name}-gcc.patch
 BuildRequires:	XFree86-devel
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -33,6 +34,7 @@ myślą, aby być małym, szybkim oraz bardzo prostym w obsłudze.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 rm -f missing
@@ -50,7 +52,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
-	Applicationsdir=%{_applnkdir}/Office/PIMs
+	Applicationsdir=%{_desktopdir}
 
 %find_lang %{name}
 
@@ -64,5 +66,5 @@ rm -rf $RPM_BUILD_ROOT
 %dir %{_libdir}/gnofin
 %dir %{_libdir}/gnofin/plugins
 %attr(755,root,root) %{_libdir}/gnofin/plugins/*
-%{_applnkdir}/Office/PIMs/*
+%{_desktopdir}/*.desktop
 %{_mandir}/man?/*
